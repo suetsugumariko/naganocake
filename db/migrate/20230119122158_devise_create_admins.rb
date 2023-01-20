@@ -32,6 +32,12 @@ class DeviseCreateAdmins < ActiveRecord::Migration[6.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
+      #管理者ID
+      t.integer:id
+      #登録日時
+      t.datetime:created_at
+      #更新日時
+      t.datetime:updated_at
 
       t.timestamps null: false
     end
