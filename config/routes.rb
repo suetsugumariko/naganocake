@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  scope module: :public do
+    resources :items,only: [:index,:show]
+
+  end
+  namespace :admin do
+
+  end
+
   #顧客用
   #URL/customers/sin_in...
   devise_for :customers,skip: [:passwords], controllers: {
