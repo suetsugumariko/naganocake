@@ -33,7 +33,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
       #会員ID
-      t.integer:id
+      # t.integer:id
       #姓
       t.string:last_name
       #名

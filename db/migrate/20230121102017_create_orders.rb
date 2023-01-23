@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
 
 
       #注文ID
-      t.integer:id
+      # t.integer:id
       #会員ID
       t.integer:customer_id
       #配送先郵便番号

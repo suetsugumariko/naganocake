@@ -4,7 +4,7 @@ class CreateOrderDetails < ActiveRecord::Migration[6.1]
 
 
       #注文商品ID
-      t.integer:id
+      # t.integer:id
       #注文ID
       t.integer:order_id
       #商品ID

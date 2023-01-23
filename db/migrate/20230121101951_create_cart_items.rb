@@ -3,9 +3,9 @@ class CreateCartItems < ActiveRecord::Migration[6.1]
     create_table :cart_items do |t|
 
       #カート内商品ID
-      t.integer:id
+      # t.integer:id
       #商品ID
-      t.item_id
+      t.integer:item_id
       #会員ID
       t.integer:customer_id
       #数量

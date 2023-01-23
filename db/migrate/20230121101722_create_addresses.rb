@@ -3,7 +3,7 @@ class CreateAddresses < ActiveRecord::Migration[6.1]
     create_table :addresses do |t|
 
       #配送先ID
-      t.integer:id
+      # t.integer:id
       #会員ID
       t.integer:customer_id
       #宛名

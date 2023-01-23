@@ -11,6 +11,28 @@
   </head>
 
   <body>
+
+    <% if request.url&.include?("admin") %>
+      <% if request.path == "/admin" %>
+        <p>admin_public</p>
+      <% end %>
+      <% else %>
+         <%= render '/layouts/admin_header' %>
+      <% end %>
+
+
+      <p>public</p>
+
+         <%= render '/layouts/customer_header' %>
+
+
+    <main>
     <%= yield %>
+    </main>
+
+    <footer>
+
+    </footer>
+
   </body>
 </html>

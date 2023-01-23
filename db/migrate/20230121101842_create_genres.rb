@@ -3,7 +3,7 @@ class CreateGenres < ActiveRecord::Migration[6.1]
     create_table :genres do |t|
 
       #ジャンルID
-      t.integer:id
+      # t.integer:id
       #ジャンル名
       t.string:name
 

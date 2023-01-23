@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration[6.1]
     create_table :items do |t|
 
       #商品ID
-      t.integer:id
+      # t.integer:id
       #ジャンルID
       t.integer:genre_id
       #商品名
