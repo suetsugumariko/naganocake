@@ -4,15 +4,18 @@ class Admin::ItemsController < ApplicationController
   end
 
   def new
+    @items = Item.new
   end
 
   def create
   end
 
   def show
+
   end
 
   def edit
+    @item = Itmem.find(params[:id])
   end
 
   def update

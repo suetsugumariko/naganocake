@@ -1,2 +1,39 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<!--<h1>Admin::Items#show</h1>-->
+<!--<p>Find me in app/views/admin/items/show.html.erb</p>-->
+<h2>商品詳細</h2>
+
+<!--画像表示-->
+
+<table>
+  <tbody>
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <th>商品名</th>
+      <th>いちごのショートケーキ</th>
+      <!--商品名の枠-->
+    </tr>
+     <tr>
+      <th>商品説明</th>
+      <th>栃木県産のとちあとめを贅沢に使用しています。</th>
+      <!--商品説明の枠-->
+    </tr>
+     <tr>
+      <th>ジャンル</th>
+      <th>ケーキ</th>
+      <!--ジャンル選択の枠-->
+    </tr>
+    <tr>
+      <th>税抜価格</th>
+      <th>2,750(2,500)円</th>
+      <!--金額入力の枠-->
+    </tr>
+    <tr>
+      <th>販売ステータス</th>
+      <th>販売中</th>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= f.subumit '編集する'%></p>

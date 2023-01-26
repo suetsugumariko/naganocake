@@ -1,2 +1,37 @@
-<h1>Admin::Items#new</h1>
-<p>Find me in app/views/admin/items/new.html.erb</p>
+<!--<h1>Admin::Items#new</h1>-->
+<!--<p>Find me in app/views/admin/items/new.html.erb</p>-->
+<h2>商品新規登録</h2>
+
+
+<table>
+  <tbody>
+    <tr>
+      <th>商品画像</th>
+      <!--ファイル選択　画像-->
+    </tr>
+    <tr>
+      <th>商品名</th>
+      <!--商品名の枠-->
+    </tr>
+     <tr>
+      <th>商品説明</th>
+      <!--商品説明の枠-->
+    </tr>
+     <tr>
+      <th>ジャンル</th>
+      <!--ジャンル選択の枠-->
+    </tr>
+    <tr>
+      <th>税抜価格</th>
+      <!--金額入力の枠-->
+    </tr>
+    <tr>
+      <th>販売ステータス</th>
+      <!--販売中と販売停止中の枠-->
+    </tr>
+  </tbody>
+</table>
+
+<p><%= f.subumit '新規登録'%></p>
+
+<% end %>
