@@ -1,20 +1,23 @@
 <!--<h1>Admin::Items#edit</h1>-->
 <!--<p>Find me in app/views/admin/items/edit.html.erb</p>-->
 <h2>商品編集</h2>
-
+<%= form_with model: @item do |f| %>
 
 <table>
   <tbody>
     <tr>
       <th>商品画像</th>
+      <%= f.file_field :image, accept: "image/*" %>
       <!--ファイル選択　画像-->
     </tr>
     <tr>
       <th>商品名</th>
+      <%= f.text_field :title %>
       <!--商品名の枠-->
     </tr>
      <tr>
       <th>商品説明</th>
+      <%= f.text_area :body %>
       <!--商品説明の枠-->
     </tr>
      <tr>
