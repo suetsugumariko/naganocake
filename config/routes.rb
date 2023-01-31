@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  #顧客用
   #URL/customers/sin_in...
   devise_for :customers,skip: [:passwords], controllers: {
-    registations: "public/registrations",
+    registrations: "public/registrations",
     sessions: 'public/sessions'
   }
 
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     get '/about' => 'homes#about'
     resources :homes,only: [:top,:about]
     resources :items,only: [:index,:show]
-    resources :registrations,only: [:new,:create]
+    # resources :registrations,only: [:new,:create]
     # resources :sessions,only: [:new,:create,:destroy]
     resources :customers,only: [:show,:edit,:update,:unsubscribe,:withdaw]
     resources :cart_items,only: [:index,:update,:destory,:destory_all,:create]
