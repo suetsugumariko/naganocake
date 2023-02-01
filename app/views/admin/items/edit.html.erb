@@ -7,17 +7,17 @@
   <tbody>
     <tr>
       <th>商品画像</th>
-      <%= f.file_field :image, accept: "image/*" %>
+      <th><%= f.file_field :image, accept: "image/*" %></th>
       <!--ファイル選択　画像-->
     </tr>
     <tr>
       <th>商品名</th>
-      <%= f.text_field :title %>
+      <th><%= f.text_field :title %></th>
       <!--商品名の枠-->
     </tr>
      <tr>
       <th>商品説明</th>
-      <%= f.text_area :body %>
+      <th><%= f.text_area :body %></th>
       <!--商品説明の枠-->
     </tr>
      <tr>
@@ -26,13 +26,19 @@
     </tr>
     <tr>
       <th>税抜価格</th>
+      <th><%= f.text_field :price %>円</th>
       <!--金額入力の枠-->
     </tr>
     <tr>
       <th>販売ステータス</th>
+      <th><%= f.radio_button :is_active_method, "販売中" %>販売中<%= f.radio_button :is_active_method, "販売停止中" %>販売停止中</th>
       <!--販売中と販売停止中の枠-->
     </tr>
   </tbody>
 </table>
 
 <p><%= f.subumit '変更を保存'%></p>
+
+
+
+<% end %>

@@ -11,13 +11,13 @@
     </tr>
     <tr>
       <th>商品名</th>
-      <p><%= @item.title %></p>
-      <th>いちごのショートケーキ</th>
+      <th><%= @item.title %></th>
+      <th>いちごのショートケーキ(ホール)</th>
       <!--商品名の枠-->
     </tr>
      <tr>
       <th>商品説明</th>
-      <p><%= @item.body %></p>
+      <th><%= @item.body %></th>
       <th>栃木県産のとちあとめを贅沢に使用しています。</th>
       <!--商品説明の枠-->
     </tr>
@@ -38,4 +38,4 @@
   </tbody>
 </table>
 
-<p><%= f.subumit '編集する'%></p>
+<p><%= link_to item.編集する, " /admin/items #{item.id}" %></p>

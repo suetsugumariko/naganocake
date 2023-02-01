@@ -1,21 +1,37 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+
 <!--顧客詳細画面-->
-<h1>山田花子さんの会員詳細</h1>
+<h3>山田花子さんの会員詳細</h3>
 
 <table>
-  <thead>
+  <tbody>
     <tr>
       <th>会員ID</th>
+    </tr>
+    <tr>
       <th>氏名</th>
+    </tr>
+    <tr>
       <th>フリガナ</th>
+    </tr>
+    <tr>
       <th>郵便番号</th>
+    </tr>
+    <tr>
       <th>住所</th>
+    </tr>
+    <tr>
       <th>電話番号</th>
+    </tr>
+    <tr>
       <th>メールアドレス</th>
+    </tr>
+    <tr>
       <th>会員ステータス</th>
     </tr>
-  </thead>
+  </tbody>
+</table>
 
   <!--編集する　ボタン-->
+  <p><%= link_to customer.編集する, " /admin/customers/:id/edit #{customer.id}" %></p>
   <!--注文履歴一覧を見る　ボタン-->
+  <p><%= link_to customer.注文履歴一覧を見る, " /admin/customers/:id/edit #{customer.id}" %></p>
