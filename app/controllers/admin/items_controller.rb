@@ -1,6 +1,7 @@
 class Admin::ItemsController < ApplicationController
   def index
     @items = Item.all
+    @item = Item.new
   end
 
   def new
@@ -15,6 +16,7 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @item = Item.new
   end
 
   def edit
@@ -26,6 +28,10 @@ class Admin::ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:title, :body, :image)
+    params.require(:item).permit(:title, :body, :image, :price, :is_active_method)
   end
+
+
+
 end
+

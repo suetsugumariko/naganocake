@@ -1,8 +1,15 @@
-<h2>Sign up</h2>
+<h4>新規会員登録</h4>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_with model: registration.new do |f| %>
+
+
   <%= render "public/shared/error_messages", resource: resource %>
 
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.name_field :name, autofocus: true, autocomplete: "name" %>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -22,8 +29,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "新規登録" %>
   </div>
 <% end %>
 
-<%= render "public/shared/links" %>
+<h4>既に登録済みの方</h4>
+<%= link_to "こちら",  /items_path, method: :index %>
+
