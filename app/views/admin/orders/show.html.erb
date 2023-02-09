@@ -2,3 +2,38 @@
 <p>Find me in app/views/admin/orders/show.html.erb</p>
 <!--注文詳細画面(ステータス編集を兼ねる)-->
 
+<h4>注文履歴詳細</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <th></th>
+    </tr>
+    <tr>
+      <th>購入者</th>
+      <th><%= @order.name %></th>
+      <!--商品名の枠-->
+    </tr>
+     <tr>
+      <th>注文日</th>
+      <th><%= @order.created_at %></th>
+      <!--商品説明の枠-->
+    </tr>
+     <tr>
+      <th>配送先</th>
+      <th><%= @order.address %></th>
+      <!--ジャンル選択の枠-->
+    </tr>
+    <tr>
+      <th>支払方法</th>
+      <th><%= @order.payment_method %></th>
+      <!--金額入力の枠-->
+    </tr>
+    <tr>
+      <th>注文ステータス</th>
+      <th><%= @order.status %></th>
+    </tr>
+  </tbody>
+</table>
+
+<p><%= link_to order.更新, admin_order_path(order.id) %></p>

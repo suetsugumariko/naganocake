@@ -6,12 +6,15 @@ class Admin::ItemsController < ApplicationController
 
   def new
     @items = Item.new
+    @item_image = Item.new
+    #ジャンル　セレクト
+    @genre_id = Genre.pluck(:name, :id)
   end
 
   def create
     item = Item.new(item_params)
     item.save
-    redirect_to '/admin/items'
+    redirect_to admin_item_path(item.id)
   end
 
   def show
