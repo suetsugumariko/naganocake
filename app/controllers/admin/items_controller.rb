@@ -7,7 +7,7 @@ class Admin::ItemsController < ApplicationController
   def new
     @items = Item.new
     @item_image = Item.new
-    #ジャンル　セレクト
+    #ジャンル　セレクトボックス
     @genre_id = Genre.pluck(:name, :id)
   end
 
@@ -31,7 +31,7 @@ class Admin::ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :introduction, :image, :price, :is_active)
+    params.require(:item).permit(:name, :introduction, :image, :price, :is_active, :item_id, :amount)
   end
 
 
