@@ -2,3 +2,36 @@
 <p>Find me in app/views/public/orders/comfirm.html.erb</p>
 <!--注文情報確認画面-->
 <h3>注文情報確認</h3>
+
+<table>
+  <thead>
+    <th>商品名</th>
+    <th>単価(税込)</th>
+    <th>数量</th>
+    <th>小計</th>
+    <th>送料</th>
+  </thead>
+</table>
+<tbody>
+  <%= @order.each do |order| %>
+  <tr>
+    <td><%= order.order_id %></td>
+    <td><%= order.with_tax_price %></td>
+    <td><%= order.amount %></td>
+    <td><%= (order.item.price*1.1).floor * order.amount %></td>
+    <td><%= order.shipping_cost %></td>
+
+  </tr>
+</tbody>
+
+<p>支払い方法</p>
+<%= order.payment_method %>
+
+<p>お届け先</p>
+<%= order.address %>
+
+
+<% end %>
+
+<%= link_to "注文を確定する", orders_path %>
+
