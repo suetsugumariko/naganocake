@@ -23,7 +23,7 @@
     </tr>
      <tr>
       <th>ジャンル</th>
-      <th><%= f.collection_select (:genre_id, @genre_id, :id, :genre_id, :name, {prompt: "選択してください"} %></th>
+      <th><%= f.select :genre_id, ['ケーキ','プリン','焼き菓子'], {include_blank: '選択してください'} %></th>
       <!--ジャンル選択の枠-->
     </tr>
     <tr>

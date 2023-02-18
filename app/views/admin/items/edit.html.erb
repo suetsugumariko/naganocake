@@ -22,6 +22,7 @@
     </tr>
      <tr>
       <th>ジャンル</th>
+      <th><%= f.select :genre_id, ['ケーキ','プリン','焼き菓子'], {include_blank: '選択してください'} %></th>
       <!--ジャンル選択の枠-->
     </tr>
     <tr>
@@ -37,7 +38,7 @@
   </tbody>
 </table>
 
-<p><%= f.subumit '変更を保存'%></p>
+<p><%= f.submit '変更を保存'%></p>
 
 
 

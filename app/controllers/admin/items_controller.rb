@@ -19,11 +19,13 @@ class Admin::ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @item = Item.new
+
   end
 
   def edit
-    @item = Itmem.find(params[:id])
+    @item = Item.find(params[:id])
+    #ジャンル　セレクトボックス
+    @genre_id = Genre.pluck(:name, :id)
   end
 
   def update
@@ -31,7 +33,7 @@ class Admin::ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :introduction, :image, :price, :is_active, :item_id, :amount)
+    params.require(:item).permit(:name, :introduction, :image, :price, :is_active, :item_id, :amount, :genre_id, :title, :body)
   end
 
 
