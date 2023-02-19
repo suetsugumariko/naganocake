@@ -1,11 +1,11 @@
 <h1>Public::Items#index</h1>
 <p>Find me in app/views/public/items/index.html.erb</p>
-<!--商品一覧-->
-<h2>商品一覧</h2><h4>(全x件)</h4>
+
+<h2>商品一覧</h2> <h4>(全x件)</h4>
 <% @items.each do |item| %>
-<!--商品画像-->
-<%= item.image_id %>
-<%= item.items_name %>
+
+<%= item.image %>
+<%= item.name %>
 <%= item.price %>
 
 
