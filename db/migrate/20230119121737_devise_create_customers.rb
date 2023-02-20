@@ -50,10 +50,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       t.string:telephone_number
       #退会ステータス
       t.boolean:is_deleted
-      #登録日時
-      t.datetime:created_at
-      #更新日時
-      t.datetime:updated_at
+
 
 
 
