@@ -31,7 +31,11 @@
        <p><%= item.genre.name %></p>
       </td>
       <td>
-       <p><%= item.is_active %></p>
+       <% if item.is_active %>
+         <p>販売中</p>
+       <% else %>
+         <p>販売停止中</p>
+       <% end %>
       </td>
     </tr>
     <% end %>
