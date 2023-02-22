@@ -6,9 +6,9 @@ class Customer < ApplicationRecord
 
 
 
-  #退会ユーザーはログインできなくする
-  def active_for_authentication?
-    super && (is_valid == true)
-  end
+  # #退会ユーザーはログインできなくする
+  # def active_for_authentication?
+  #   super && (is_valid == true)
+  # end
 
 end
