@@ -24,22 +24,37 @@ Rails.application.routes.draw do
     resources :items,only: [:index,:show]
     # resources :registrations,only: [:new,:create]
     # resources :sessions,only: [:new,:create,:destroy]
-    resources :customers,only: [:show,:edit,:update,:unsubscribe,:withdaw]
-    resources :cart_items,only: [:index,:update,:destory,:destory_all,:create]
-    resources :orders,only: [:new,:comfirm,:complete,:create,:index,:show]
-    resources :addresses,only: [:index,:edit,:new,:update,:destory]
+    # resources :customers,only: [:show,:edit,:update,:unsubscribe,:withdaw]
+    get '/customers/my_page' => 'customers#show'
+    get '/customers/infomation/edit' => 'customers#edit'
+    patch '/customers/infomation' => 'customers#update'
+    get '/customers/unsubscribe' => 'customers#unsubscribe'
+    patch '/customers/withdraw' => 'customers#withdraw'
+
+    resources :cart_items,only: [:index,:update,:create]
+    delete '/cart_items/:id' => 'cart_items#destroy'
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
+
+    resources :orders,only: [:new,:create,:index,:show]
+    post '/orders/confirm' => 'orders#comfirm'
+    get '/orders/complete' => 'orders#complete'
+
+    resources :addresses,only: [:index,:edit,:update]
+    post '/addresses' => 'addresses#new'
+    delete '/addresses/id' => 'addresses#destroy'
 
   end
 
   namespace :admin do
-  # resources :sessions,only: [:new,:create,:destroy]
+  #resources :sessions,only: [:new,:create,:destroy]
    get '/' => 'homes#top'
 
    resources :items,only: [:index,:new,:create,:show,:edit,:update]
    resources :genres,only: [:index,:create,:edit,:update]
    resources :customers,only: [:index,:show,:edit,:update]
    resources :orders,only: [:show,:update]
-   resources :orders_details,only: [:update]
+   patch '/admin/orders/:order_id/order_details/:id' => 'orders_details#update'
+   #resources :orders_details,only: [:update]
   end
 
 
