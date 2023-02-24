@@ -5,6 +5,7 @@
 <%= form_with item:Item.new do |f| %>
 
 <!--ケーキの画像表示-->
+   <%= f.file_field :image, accept: "image/*" %>
 
 <!--商品のタイトル-->
    <%= @item.name %>
