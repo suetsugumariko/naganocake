@@ -6,11 +6,14 @@
 <p>購入には会員登録が必要になります。</p>
 
 <h2>新着商品</h2>
-<% @homes.each do |home|%>
+<% @items.each do |item|%>
 <!--画像-->
-
+<%= image_tag item.get_image(50,50) %>
 <!--商品名-->
-<span><%= home.name %></span>
+<p><%= item.name %></p>
 <!--値段-->
+<p><%= item.price %></p>
 
-<!--全ての商品を見る-->
+<% end %>
+<%= link_to "全ての商品を見る",items_path %>
+

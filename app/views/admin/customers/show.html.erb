@@ -1,32 +1,40 @@
 
 <!--顧客詳細画面-->
-<h3>山田花子さんの会員詳細</h3>
+<h3><%= @customer.last_name+first_name %>さんの会員詳細</h3>
 
 <table>
   <tbody>
     <tr>
       <th>会員ID</th>
+      <p><%= @customer.id %></p>
     </tr>
     <tr>
       <th>氏名</th>
+      <p><%= @customer.last_name+first_name %></p>
     </tr>
     <tr>
       <th>フリガナ</th>
+      <p><%= @customer.last_name_kana+first_name_kana %></p>
     </tr>
     <tr>
       <th>郵便番号</th>
+      <p><%= @customer.postal_code %></p>
     </tr>
     <tr>
       <th>住所</th>
+      <p><%= @customer.address %></p>
     </tr>
     <tr>
       <th>電話番号</th>
+      <p><%= @customer.telephone_number %></p>
     </tr>
     <tr>
       <th>メールアドレス</th>
+      <p><%= @customer.email %></p>
     </tr>
     <tr>
       <th>会員ステータス</th>
+      <p><%= @customer.is_deleted %></p>
     </tr>
   </tbody>
 </table>

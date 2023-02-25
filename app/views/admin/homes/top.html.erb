@@ -17,25 +17,26 @@
   </thead>
 
   <tbody>
-    <% @homes.each do |home| %>
+    <% @orders.each do |order| %>
     <tr>
      <td>
         <%= link_to admin_path(home.id) do %>
-        <% end %>
+
       </td>
       <td>
-       <p><%= home.created_at %></p>
+       <p><%= order.created_at %></p>
       </td>
       <td>
-       <p><%= home.name %></p>
+       <p><%= order.name %></p>
       </td>
       <td>
-       <p><%= home.amount %></p>
+       <p><%= order.amount %></p>
       </td>
       <td>
-       <p><%= home.status %></p>
+       <p><%= order.status %></p>
       </td>
     </tr>
   </tbody>
+      <% end %>
     <% end %>
 </table>
