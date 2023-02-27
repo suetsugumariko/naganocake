@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-  #resources :sessions,only: [:new,:create,:destroy]
+   #resources :sessions,only: [:new,:create,:destroy]
    get '/' => 'homes#top'
 
    resources :items,only: [:index,:new,:create,:show,:edit,:update]
