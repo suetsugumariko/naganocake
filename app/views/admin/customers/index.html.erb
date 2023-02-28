@@ -26,13 +26,13 @@
        <p><%= customer.id %></p>
       </td>
       <td>
-       <p><%= item.name %></p>
+       <p><%= customer.last_name %><%= customer.first_name %></p>
       </td>
        <td>
-       <p><%= item.email %></p>
+       <p><%= customer.email %></p>
       </td>
       <td>
-       <p><%= item.is_deleted %></p>
+       <p><%= customer.is_deleted %></p>
       </td>
     </tr>
     <% end %>
