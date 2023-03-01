@@ -1,11 +1,10 @@
-<h1>Public::Items#show</h1>
-<p>Find me in app/views/public/items/show.html.erb</p>
+
 <!--商品詳細画面-->
 
-<%= form_with item:Item.new do |f| %>
+
 
 <!--ケーキの画像表示-->
-   <%= f.file_field :image, accept: "image/*" %>
+   <%#= @item.image, accept: "image/*" %>
 
 <!--商品のタイトル-->
    <%= @item.name %>
@@ -13,14 +12,15 @@
 <!--商品の説明-->
    <%= @item.introduction %>
 
-<!--値段-->
-   <%= @item.price %>
 
+<%= form_with model: @cart_item do |f| %>
+<%= f.hidden_field :item_id, :value => @item.id %>
+<%= f.hidden_field :customer_id, :value => current_customer.id %>
 <!--商品の個数選択-->
    <%= f.select :amount,[['1'],['2'],['3']] %>
 
 <!--カートに入れるボタン-->
-   <%= f.submit 'カートに入れる'%>
+   <%= f.submit "カートに入れる" %>
 
 
 <% end %>

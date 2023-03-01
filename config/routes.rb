@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
 
   scope module: :public do
-    get '/' => 'homes#top'
+    root to: 'homes#top'
     get '/about' => 'homes#about'
     resources :homes,only: [:top,:about]
     resources :items,only: [:index,:show]
@@ -60,7 +60,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-root to: "public/homes#top"
+
 
 
 
