@@ -6,4 +6,5 @@ class Admin < ApplicationRecord
 
 
   has_many :item_images, dependent: :destroy
+  has_one_attached :image
 end

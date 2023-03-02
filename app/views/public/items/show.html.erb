@@ -5,6 +5,11 @@
 
 <!--ケーキの画像表示-->
    <%#= @item.image, accept: "image/*" %>
+       <% if @item.image.attached? %>
+           <%= image_tag @item.image, size: "200x200" %>
+       <% else %>
+           <%= image_tag 'no_image', size: "200x200" %>
+       <% end %>
 
 <!--商品のタイトル-->
    <%= @item.name %>
