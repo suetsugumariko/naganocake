@@ -12,7 +12,12 @@ class Public::SessionsController < Devise::SessionsController
   # def create
   #   super
   # end
-
+  def after_sign_in_path_for(resource)
+   # redirect_to
+   root_path
+   #"/"
+  #customer_path(current_customer.id)
+  end
   # DELETE /resource/sign_out
   # def destroy
   #   super
