@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -21,22 +21,33 @@
       <ul>
       <li>
         <%= link_to customers_my_page_path do %>
+        <div class="container">
+          <div class="row">
+          <div class="col-3">
           <span>マイページ</span>
+          </div>
         <% end %>
       </li>
       <li>
         <%= link_to items_path do %>
+          <div class="col-3">
           <span>商品一覧</span>
+          </div>
         <% end %>
       </li>
       <li>
         <%= link_to cart_items_path do %>
+          <div class="col-3">
+          <li class="nav-item">
           <span>カート</span>
+          </div>
         <% end %>
       </li>
       <li>
         <%= link_to destroy_customer_session_path, method: :delete do %>
+           <div class="col-3">
           <span>ログアウト</span>
+          </div>
         <% end %>
       </li>
       </ul>
