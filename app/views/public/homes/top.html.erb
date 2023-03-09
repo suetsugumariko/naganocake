@@ -10,12 +10,13 @@
 <!--画像-->
 <%= link_to item_path(item.id) do %>
 <%= image_tag item.get_image(50,50) %>
+<% end %>
 <!--商品名-->
 <p><%= item.name %></p>
 <!--値段-->
 <p><%= item.price %></p>
 
-<% end %>
+
 <% end %>
 <%= link_to "全ての商品を見る",items_path %>
 

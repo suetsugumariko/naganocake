@@ -17,6 +17,9 @@
 <!--商品の説明-->
    <%= @item.introduction %>
 
+<!--商品値段-->
+ ￥  <%= +@item.price %>
+
 
 <%= form_with model: @cart_item do |f| %>
 <%= f.hidden_field :item_id, :value => @item.id %>

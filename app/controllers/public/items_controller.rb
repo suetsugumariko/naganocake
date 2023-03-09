@@ -8,7 +8,11 @@ class Public::ItemsController < ApplicationController
     @cart_item = CartItem.new
   end
 
-
+  def create
+    @item = Item.new(item_params)
+    @item.save
+    redirect_to cart_items_path
+  end
 
    private
   def item_params
