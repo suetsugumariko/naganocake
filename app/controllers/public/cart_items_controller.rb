@@ -16,6 +16,13 @@ class Public::CartItemsController < ApplicationController
     @cart_item = CartItem.new(cart_item_params)
     @cart_item.save
     redirect_to cart_items_path
+    #@cart_item = current_customer.cart_item.build(cart_item_params)
+    #@cart_items = current_customer.cart_items.all
+    #@cart_items.each do |cart_item|
+   #if cart_item.item_id == @cart_item.item_id
+
+   #end
+  #end
   end
 
 
