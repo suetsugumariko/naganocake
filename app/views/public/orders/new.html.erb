@@ -2,7 +2,7 @@
 <!--<p>Find me in app/views/public/orders/new.html.erb</p>-->
 <!--注文情報入力画面（支払い方法・配送先の選択）-->
 <h3>注文情報入力</h3>
-<%= form_with model:Order.new do |f|%>
+<%= form_with model:Order.new,url: orders_confirm_path do |f|%>
 
 <h3>支払方法</h3>
 <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
@@ -17,7 +17,8 @@
 <%= f.radio_button :postal_code_method, "address" %>
 <%#= f.radio_button :address, "address" %>
 <%= f.label :postal_code_address, "ご自身の住所" %>
-
+〒<%= current_customer.postal_code+current_customer.address %>
+<%= current_customer.first_name+current_customer.last_name %>
 <%= f.radio_button :address_method, "address" %>
 <%= f.label :address, "登録済住所から選択" %>
 <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :address_display) %>
@@ -33,5 +34,5 @@
 <p>宛名</p>
 <%= f.text_field :name %>
 
-<%= link_to "確認画面へ進む", orders_confirm_path %>
+<%= f.submit "確認画面へ進む" %>
 <% end %>

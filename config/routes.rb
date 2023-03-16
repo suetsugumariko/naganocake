@@ -32,7 +32,9 @@ Rails.application.routes.draw do
     patch '/customers/withdraw' => 'customers#withdraw'
 
     resources :cart_items,only: [:index,:update,:create] do
+    #urlのidをなくすためcollection使用
     collection do
+    #doからendの間にグループとしてdestroy_all入れる
     delete 'destroy_all'
     end
     end
