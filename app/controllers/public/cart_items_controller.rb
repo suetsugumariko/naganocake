@@ -1,15 +1,22 @@
 class Public::CartItemsController < ApplicationController
   def index
     @cart_item = CartItem.all
+    @total_price = 0
   end
 
   def update
   end
 
   def destroy
+    cart_item = CartItem.find(params[:id])  # データ（レコード）を1件取得
+    cart_item.destroy  # データ（レコード）を削除
+    #@cart_item.id destroy
+    redirect_to cart_items_path
   end
 
   def destroy_all
+    CartItem.destroy_all
+    redirect_to cart_items_path
   end
 
   def create

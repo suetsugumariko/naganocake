@@ -31,9 +31,14 @@ Rails.application.routes.draw do
     get '/customers/unsubscribe' => 'customers#unsubscribe'
     patch '/customers/withdraw' => 'customers#withdraw'
 
-    resources :cart_items,only: [:index,:update,:create]
+    resources :cart_items,only: [:index,:update,:create] do
+    collection do
+    delete 'destroy_all'
+    end
+    end
+
     delete '/cart_items/:id' => 'cart_items#destroy'
-    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
+    #delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
 
     resources :orders,only: [:new,:create,:index,:show]
     post '/orders/confirm' => 'orders#comfirm'
