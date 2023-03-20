@@ -15,13 +15,17 @@
     <%#= render '/layouts/customer_header' %>
     <header>
 
+     <header class="sticky-top">
+
+
+
     <% if customer_signed_in? %>
     <span>LOGO</span>
     <nav>
       <ul>
       <li>
         <%= link_to customers_my_page_path do %>
-        <div class="container">
+        <!--<div class="container">-->
           <!--<div class="row">-->
           <div class="col-3">
           <span>マイページ</span>

@@ -9,29 +9,52 @@
     <th>単価(税込)</th>
     <th>数量</th>
     <th>小計</th>
-    <th>送料</th>
+    <!--<th>送料</th>-->
   </thead>
 </table>
 <tbody>
-  <%= @order.each do |order| %>
+  <%= @cart_items.each do |order_detail| %>
   <tr>
-    <td><%= order.order_id %></td>
-    <td><%= order.with_tax_price %></td>
-    <td><%= order.amount %></td>
-    <td><%= (order.item.price*1.1).floor * order.amount %></td>
-    <td><%= order.shipping_cost %></td>
+    <td><%= order_detail.item.name %></td>
+    <td><%= order_detail.item.with_tax_price %></td>
+    <td><%= order_detail.amount %></td>
+    <td><%= order_detail.subtotal %></td>
+    <%#= order_detail.shipping_cost %>
 
   </tr>
+  <% end %>
 </tbody>
 
+<table>
+  <thead>
+    <th>送料</th>
+    <th>商品合計</th>
+    <th>請求金額</th>
+  </thead>
+</table>
+<tbody>
+  <%= @cart_items.each do |order_detail| %>
+  <tr>
+    <td><%= order_detail.item.name %></td>
+    <td><%= order_detail.item.with_tax_price %></td>
+    <td><%= order_detail.amount %></td>
+    <td><%= order_detail.subtotal %></td>
+    <td><%= order_detail.shipping_cost %></>
+
+  </tr>
+  <% end %>
+</tbody>
+<%= form_with model:@cart_items,url:orders_path.new do |f| %>
+
 <p>支払い方法</p>
-<%= order.payment_method %>
+<%= f.hidden_field :payment_method_i18n, :value:@cart_items %>
 
 <p>お届け先</p>
-<%= order.address %>
+<%= f.text_field :address %>
 
+
+
+
+<%= f.submit "注文を確定する" %>
 
 <% end %>
-
-<%= link_to "注文を確定する", orders_path %>
-
