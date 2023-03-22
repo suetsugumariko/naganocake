@@ -33,21 +33,20 @@
   </thead>
 </table>
 <tbody>
-  <%= @cart_items.each do |order_detail| %>
   <tr>
-    <td><%= order_detail.item.name %></td>
-    <td><%= order_detail.item.with_tax_price %></td>
-    <td><%= order_detail.amount %></td>
-    <td><%= order_detail.subtotal %></td>
-    <td><%= order_detail.shipping_cost %></>
+    <td><%= @order.shipping_cost %></td>
 
+    <%= @total_price.each do |order| %>
+    <td><%= order.item.total amount %></td>
+    <td><%#= order.item.total_payment %></td>
+    <td><%= @total_price += order.shipping_cost %></td>
+    <% end %>
   </tr>
-  <% end %>
 </tbody>
 <%= form_with model:@cart_items,url:orders_path.new do |f| %>
 
 <p>支払い方法</p>
-<%= f.hidden_field :payment_method_i18n, :value:@cart_items %>
+<%= f.hidden_field :payment_method_i18n, value:@cart_items %>
 
 <p>お届け先</p>
 <%= f.text_field :address %>
