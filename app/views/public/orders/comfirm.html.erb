@@ -1,32 +1,30 @@
-<h1>Public::Orders#comfirm</h1>
-<p>Find me in app/views/public/orders/comfirm.html.erb</p>
 <!--注文情報確認画面-->
 <h3>注文情報確認</h3>
 
-<table>
+<table class="table table-bordered">
   <thead>
-    <th>商品名</th>
-    <th>単価(税込)</th>
-    <th>数量</th>
-    <th>小計</th>
+    <th scope="col">商品名</th>
+    <th scope="col">単価(税込)</th>
+    <th scope="col">数量</th>
+    <th scope="col">小計</th>
   </thead>
 </table>
 <tbody>
   <% @cart_items.each do |order_detail| %>
   <tr>
-    <td><%= order_detail.item.name %></td>
-    <td><%= order_detail.item.with_tax_price %></td>
-    <td><%= order_detail.amount %></td>
-    <td><%= order_detail.subtotal %></td>
+    <td colspan="3"><%= order_detail.item.name %></td>
+    <td colspan="3"><%= order_detail.item.with_tax_price %></td>
+    <td colspan="3"><%= order_detail.amount %></td>
+    <td colspan="3"><%= order_detail.subtotal %></td>
   </tr>
   <% end %>
 </tbody>
 
-<table>
+<table class="table table-bordered">
   <thead>
-    <th>送料</th>
-    <th>商品合計</th>
-    <th>請求金額</th>
+    <th scope="row">送料</th>
+    <th scope="row">商品合計</th>
+    <th scope="row">請求金額</th>
   </thead>
 </table>
 <tbody>
@@ -40,18 +38,36 @@
     <% @total_price += @order.shipping_cost %>
     <td><%= @total_price %></td>
   </tr>
+
+
+  <tr>
+  <th>支払い方法</th>
+  <td><%= @order.payment_method %></td>
+ </tr>
+ <tr>
+   <th>お届け先</th>
+   <td>
+    <%= @order.postal_code %>
+    <%= @order.address %>
+    <%= @order.name %>
+   </td>
+  </tr>
+
 </tbody>
+
+
 <%#= form_with model:@cart_items,url:orders_path do |f| %>
 
-<p>支払い方法</p>
+<!--<p>支払い方法</p>-->
 <%#= f.hidden_field :payment_method_i18n, value:@cart_items %>
 
-<p>お届け先</p>
+<!--<p>お届け先</p>-->
 <%#= f.text_field :address %>
-
-
-
 
 <%#= f.submit "注文を確定する" %>
 
 <%# end %>
+
+
+
+
