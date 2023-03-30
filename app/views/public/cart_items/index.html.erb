@@ -22,6 +22,7 @@
           <td><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete %></td>
               <% @total_price +=  cart_item.subtotal %>
       </tr>
+
   <% end %>
   </tbody>
 </table>

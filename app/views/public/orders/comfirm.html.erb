@@ -12,10 +12,10 @@
 <tbody>
   <% @cart_items.each do |order_detail| %>
   <tr>
-    <td colspan="3"><%= order_detail.item.name %></td>
-    <td colspan="3"><%= order_detail.item.with_tax_price %></td>
-    <td colspan="3"><%= order_detail.amount %></td>
-    <td colspan="3"><%= order_detail.subtotal %></td>
+    <td scope="col"><%= order_detail.item.name %></td>
+    <td scope="col"><%= order_detail.item.with_tax_price %></td>
+    <td scope="col"><%= order_detail.amount %></td>
+    <td scope="col"><%= order_detail.subtotal %></td>
   </tr>
   <% end %>
 </tbody>
@@ -42,7 +42,7 @@
 
   <tr>
   <th>支払い方法</th>
-  <td><%= @order.payment_method %></td>
+  <td><%= @order.payment_method_i18n %></td>
  </tr>
  <tr>
    <th>お届け先</th>
@@ -56,17 +56,17 @@
 </tbody>
 
 
-<%#= form_with model:@cart_items,url:orders_path do |f| %>
+<%= form_with model:@order,url:orders_path do |f| %>
 
 <!--<p>支払い方法</p>-->
-<%#= f.hidden_field :payment_method_i18n, value:@cart_items %>
+<%#= f.hidden_field :payment_method_i18n, value:@order %>
 
 <!--<p>お届け先</p>-->
 <%#= f.text_field :address %>
 
-<%#= f.submit "注文を確定する" %>
+<%= f.submit "注文を確定する" %>
 
-<%# end %>
+<% end %>
 
 
 
