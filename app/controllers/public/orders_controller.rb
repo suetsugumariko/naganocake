@@ -20,8 +20,9 @@ class Public::OrdersController < ApplicationController
 
   def create
     order = Order.new(order_params)
+    @order.customer_id = current_customer.id
     order.save
-    redirect_to '  /orders/confirm'
+    redirect_to orders_complete_path
   end
 
   def index
