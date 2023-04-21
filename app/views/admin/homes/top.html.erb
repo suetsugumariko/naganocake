@@ -20,18 +20,10 @@
         <%= link_to admin_path  %>
 
       </td>
-      <td>
-       <p><%= order.created_at %></p>
-      </td>
-      <td>
-       <p><%= order.name %></p>
-      </td>
-      <td>
-       <p><%= order.amount %></p>
-      </td>
-      <td>
-       <p><%= order.status %></p>
-      </td>
+      <td><%= order.created_at %></td>
+      <td><%= order.name %></td>
+      <td><%#= order.amount %></td>
+      <td><%= order.status %></td>
     </tr>
   </tbody>
 
