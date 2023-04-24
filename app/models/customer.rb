@@ -8,8 +8,8 @@ class Customer < ApplicationRecord
 
 
   # #退会ユーザーはログインできなくする
-   def active_for_authentication?
-     super && (is_deleted == true)
-   end
+   #def active_for_authentication?
+    # super && (is_deleted == true)
+   #end
 
 end
