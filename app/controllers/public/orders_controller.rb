@@ -21,13 +21,14 @@ class Public::OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
+    @order.status = 0
     @order.save
     current_customer.cart_items.destroy_all
     redirect_to orders_complete_path
   end
 
   def index
-    @order = Order.all
+    @orders = Order.all
   end
 
   def show

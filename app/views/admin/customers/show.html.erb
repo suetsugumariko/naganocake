@@ -1,45 +1,51 @@
 
 <!--顧客詳細画面-->
-<h3><%= @customer.current_name %>さんの会員詳細</h3>
+<h3><%= @customer.last_name+@customer.first_name %>さんの会員詳細</h3>
 
 <table>
   <tbody>
     <tr>
       <th>会員ID</th>
-      <p><%= @customer.id %></p>
+      <td><%= @customer.id %></td>
     </tr>
     <tr>
       <th>氏名</th>
-      <p><%= @customer.last_name+first_name %></p>
+      <td><%= @customer.last_name+@customer.first_name %></td>
     </tr>
     <tr>
       <th>フリガナ</th>
-      <p><%= @customer.last_name_kana+first_name_kana %></p>
+      <td><%= @customer.last_name_kana+@customer.first_name_kana %></td>
     </tr>
     <tr>
       <th>郵便番号</th>
-      <p><%= @customer.postal_code %></p>
+      <td><%= @customer.postal_code %></td>
     </tr>
     <tr>
       <th>住所</th>
-      <p><%= @customer.address %></p>
+      <td><%= @customer.address %></td>
     </tr>
     <tr>
       <th>電話番号</th>
-      <p><%= @customer.telephone_number %></p>
+      <td><%= @customer.telephone_number %></td>
     </tr>
     <tr>
       <th>メールアドレス</th>
-      <p><%= @customer.email %></p>
+      <td><%= @customer.email %></td>
     </tr>
     <tr>
       <th>会員ステータス</th>
-      <p><%= @customer.is_deleted %></p>
+      <td>
+        <% if @customer.is_deleted %>
+         <p>有効</p>
+        <% else %>
+         <p>退会</p>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>
 
   <!--編集する　ボタン-->
-  <p><%= link_to customer.編集する, " /admin/customers/:id/edit #{customer.id}" %></p>
+  <p><%= link_to "編集する" , edit_admin_customer_path %></p>
   <!--注文履歴一覧を見る　ボタン-->
-  <p><%= link_to customer.注文履歴一覧を見る, " /admin/customers/:id/edit #{customer.id}" %></p>
+  <p><%= link_to "注文履歴一覧を見る" , admin_path %></p>
