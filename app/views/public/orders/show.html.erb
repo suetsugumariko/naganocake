@@ -3,9 +3,9 @@
 <!--注文履歴詳細画面-->
 <h2>注文履歴詳細</h2>
 <table>
-  <p>注文情報</p>
   <thead>
     <tr>
+       <p>注文情報</p>
       <th>注文日</th>
       <th>配送先</th>
       <th>支払方法</th>
@@ -15,34 +15,39 @@
   <tbody>
 
     <tr>
-      <td><%= @order.created_at %></td>
+      <td><%= @order.created_at.strftime("%Y/%m/%d")  %></td>
       <td><%= @order.address %></td>
-      <td><%= @order.payment_method %></td>
+      <td><%= @order.payment_method_i18n %></td>
       <td><%= @order.status %></td>
     </tr>
   </tbody>
 
   <table>
-  <p>請求情報</p>
+
   <thead>
+
     <tr>
+       <p>請求情報</p>
       <th>商品合計</th>
       <th>配送料</th>
       <th>ご請求額</th>
     </tr>
   </thead>
   <tbody>
+
     <tr>
-      <td><%= @order.price %></td>
+      <td><%= @order.total_payment-@order.shipping_cost %></td>
       <td><%= @order.shipping_cost %></td>
       <td><%= @order.total_payment %></td>
     </tr>
+
   </tbody>
 
 
   <table>
-  <p>注文内容</p>
+
   <thead>
+    <p>注文内容</p>
     <tr>
       <th>商品</th>
       <th>単価(税込)</th>
@@ -51,10 +56,12 @@
     </tr>
   </thead>
   <tbody>
+    <% @order.order_details.each do |order_detail| %>
     <tr>
-      <td><%= @order.item_id %></td>
-      <td><%= @order.with_tax_price %></td>
-      <td><%= @order.amount %></td>
-      <td><%= @order.(order.item.price*1.1).floor * order.amount %></td>
+      <td><%= order_detail.item_id %></td>
+      <td><%= order_detail.price %></td>
+      <td><%= order_detail.amount %></td>
+      <td><%= order_detail.price*order_detail.amount %></td>
     </tr>
+    <% end %>
   </tbody>
