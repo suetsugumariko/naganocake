@@ -60,7 +60,7 @@
 
 
 <%= f.hidden_field :postal_code, value: @order.postal_code %>
-<%= f.text_field :address %>
+<% f.text_field :address %>
 <%= f.hidden_field :name, value: @order.name %>
 <%= f.hidden_field :shipping_cost, value: @order.shipping_cost %>
 <%= f.hidden_field :total_payment, value: @total_price %>
